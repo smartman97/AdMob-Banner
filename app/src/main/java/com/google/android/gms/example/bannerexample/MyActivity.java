@@ -44,8 +44,7 @@ public class MyActivity extends ActionBarActivity
         colorButton = (Button) findViewById(R.id.colorButton);
         background = (RelativeLayout) findViewById(R.id.backgroundLayout);
 
-        // Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
-        // values/strings.xml.
+        /** Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in values/strings.xml. */
         myAdView = (AdView) findViewById(R.id.ad_view);
 
         /** Create an ad request. Check your logcat output for the hashed device ID to
@@ -56,7 +55,6 @@ public class MyActivity extends ActionBarActivity
 
         // Start loading the ad in the background.
         myAdView.loadAd(adRequest);
-
         setupListeners();
     }
 
@@ -127,6 +125,9 @@ public class MyActivity extends ActionBarActivity
         super.onDestroy();
     }
 
+    /**
+     * Creates the listners for the button which changes colors.
+     */
     public void setupListeners()
     {
         colorButton.setOnClickListener(new View.OnClickListener()
@@ -139,6 +140,9 @@ public class MyActivity extends ActionBarActivity
         });
     }
 
+    /**
+     * The method that gets and sets a random color for the background and the button.
+     */
     private void changeBackgroundColor()
     {
         int redColor;
